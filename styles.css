@@ -1,0 +1,206 @@
+/* Padrão inicial, para uso em todas páginas*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    animation: fadeInAnimation ease 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+ 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+/* Estilo do menu responsivo para uso em todas páginas */
+.navbar {
+    background-color: #AB0909;
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center;
+}
+
+
+.menu {
+    list-style-type: none;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.menu li a:hover {
+    color: rgb(0, 0, 0);
+}
+.menu li a:active {
+    opacity: 0.7;
+}
+
+
+/* Estilo do conteúdo - referente a página index */
+.content {
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de largura igual */
+    gap: 20px; /* Espaçamento entre as colunas */
+}
+
+.content-left {
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.content-right {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.content-right img {
+    max-width: 100%;
+}
+
+/* Letras de dentro da classe content */
+.content h1 {
+    font-size: 70px;
+    color: #AB0909;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+.content h2 {
+    font-size: 30px;
+    color: #AB0909;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    
+}
+.content p {
+    font-size: 20px;
+    line-height: 2.0;
+    color: #AB0909;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.content-left ul li {
+    margin-left: 30px;
+    font-size: 20px;
+    line-height: 1.0;
+    color: #AB0909;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.contato p img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.content-formulario {
+    max-width: 80%;
+    margin: 30px 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #AB0909;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #aa4444;
+}
+
+
+/* Deixando responsivo para alguns aparelhos */
+@media (max-width: 1100px) {
+    .content h1 {
+        font-size: 40px;
+    }
+    .content h2 {
+        font-size: 20px;
+    }
+    .content p {
+        font-size: 14px;
+    }
+    .content-left ul li{
+        font-size: 14px;
+    }
+}
+@media (max-width: 900px) {
+    .content h1 {
+        font-size: 30px;
+    }
+}
+@media (max-width: 700px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+    .content img {
+        order: 2; /* Move a imagem para baixo na ordem de exibição */
+    }
+    .content h1 {
+        font-size: 18px;
+    }
+    .content h2 {
+        font-size: 13px;
+    }
+    .content p {
+        font-size: 10px;
+    }
+    .content-left ul li{
+        font-size: 10px;
+    }
+}
